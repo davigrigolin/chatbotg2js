@@ -20,10 +20,10 @@ client.on('qr', (qr) => {
 
 
 client.on('message_create', message => {
-    if (['oi', 'Oi', 'OI', 'olá', 'ola', 'Ola', 'Dia', 'dia', 'Noite', 'noite', 'tarde', 'Tarde', 'Bom dia', 'Boa', 'bom dia', 'boa'].includes(message.body)) {
-		// send back "pong" to the chat the message was sent in
+    const msg = message.body.toLowerCase();
+    if (['oi', 'Oi', 'OI', 'olá', 'ola', 'Ola', 'Dia', 'dia', 'Noite', 'noite', 'tarde', 'Tarde', 'Bom dia', 'Boa', 'bom dia', 'boa'].includes(msg)) {
 		client.sendMessage(message.from, 'Olá, você está em contato com a Congrese Sistemas de Segurança!\nDigite o número do departamento para contato.');
-        client.sendMessage(message.from, '1️⃣ - camera e alarme.\n2️⃣ - G2 cabos.\n3️⃣ - Guardian Life.\nÉ possível digitar "menu" para voltar à essa mensagem.');
+        	client.sendMessage(message.from, '1️⃣ - camera e alarme.\n2️⃣ - G2 cabos.\n3️⃣ - Guardian Life.\nÉ possível digitar "menu" para voltar à essa mensagem.');
 	}
 });
 
